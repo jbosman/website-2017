@@ -1,6 +1,7 @@
 
 ### Developer Adds ###
 node_modules
+public/bundle.js
 
 
 ### Generated Generic Ignores ###
