@@ -1,0 +1,32 @@
+$speed-of-1-rotation: 1s;
+$num-of-rotations: 2;
+
+// Control the speed and rotations of animation
+@mixin orb-animate($animation) { 
+	animation: $animation $speed-of-1-rotation linear $num-of-rotations; 
+}
+
+// Controls the path for left and right orbs
+@mixin keyframe_rotate-x($x){
+	0% 		{ transform: rotate(0deg) translateX($x) rotate(0deg) }
+	100%	{ transform: rotate(360deg) translateX($x) rotate(-360deg) }
+}
+
+// Controls the path for the top and bottom orbs
+@mixin keyframe_rotate-y($y){
+	0% 		{ transform: rotate(0deg) translateY($y) rotate(0deg) }
+	100%	{ transform: rotate(360deg) translateY($y) rotate(-360deg) }
+}
+
+// Orb animations
+@keyframes rotateTop { @include keyframe_rotate-y($orb0_Y-offset); }
+.orb-container.rotateTop { @include orb-animate(rotateTop) }
+
+@keyframes rotateRight { @include keyframe_rotate-x($orb1_X-offset); }
+.orb-container.rotateRight { @include orb-animate(rotateRight) }
+
+@keyframes rotateBottom { @include keyframe_rotate-y($orb2_Y-offset); }
+.orb-container.rotateBottom { @include orb-animate(rotateBottom) }
+
+@keyframes rotateLeft { @include keyframe_rotate-x($orb3_X-offset); }
+.orb-container.rotateLeft { @include orb-animate(rotateLeft) }

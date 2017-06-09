@@ -1,0 +1,58 @@
+// Orb dimensions
+$orb_radius: 8vw;
+// Orb screen offset
+$std_offset: 20vw;
+
+// Only set variables ABOVE this line
+
+// Due to img of orb being square translate dimensions so we can treat them like a circle
+$orb-width: $orb-radius;
+$orb_height: $orb_radius;
+$orb_radius_offset: -1* 0.5 * $orb_width;
+
+// This container is used offset all orbs as a group
+#orb-group-container {
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	transform: translate( $orb_radius_offset, $orb_radius_offset);
+}
+
+// This centers them in the container
+.orb-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: $orb_width;
+	height: $orb_width;
+  
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+	.orb-text {
+		position: absolute;
+		color: white;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -75%);
+	}
+
+}
+
+
+
+// These offset them individually
+$orb0_Y-offset: -1 * $std_offset;
+$orb1_X-offset: $std_offset;
+$orb2_Y-offset: $std_offset;
+$orb3_X-offset: -1 * $std_offset;
+
+.orb-0 { transform: translateY($orb0_Y-offset); }
+.orb-1 { transform: translateX($orb1_X-offset); }
+.orb-2 { transform: translateY($orb2_Y-offset); }
+.orb-3 { transform: translateX($orb3_X-offset); }
+
+@import 'orb-animations';
