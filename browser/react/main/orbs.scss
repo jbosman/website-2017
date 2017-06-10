@@ -1,7 +1,7 @@
 // Orb dimensions
-$orb_radius: 8vw;
+$orb_radius: 10vw;
 // Orb screen offset
-$std_offset: 20vw;
+$std_offset: 18vw;
 
 // Only set variables ABOVE this line
 
@@ -34,6 +34,7 @@ $orb_radius_offset: -1* 0.5 * $orb_width;
 
 	.orb-text {
 		position: absolute;
+		font-size: 2vw;
 		color: white;
 		top: 50%;
 		left: 50%;
@@ -41,8 +42,6 @@ $orb_radius_offset: -1* 0.5 * $orb_width;
 	}
 
 }
-
-
 
 // These offset them individually
 $orb0_Y-offset: -1 * $std_offset;
@@ -55,4 +54,5 @@ $orb3_X-offset: -1 * $std_offset;
 .orb-2 { transform: translateY($orb2_Y-offset); }
 .orb-3 { transform: translateX($orb3_X-offset); }
 
-@import 'orb-animations';
+@import 'orb-circular-animations';
+@import 'orb-linear-animations';
