@@ -1,0 +1,10 @@
+
+
+	@keyframes cross { 
+		0% 		{ width: 0vw; }
+		100% 	{ width: 150vw; }
+	}
+
+	.white-bar.cross { animation: cross 0.25s linear 1 normal forwards; }
+
+	

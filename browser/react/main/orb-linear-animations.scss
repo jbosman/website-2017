@@ -1,4 +1,4 @@
-$speed-of-linear-motion: 1s;
+$speed-of-linear-motion: 0.75s;
 
 @mixin orb-animate-linear($animation){
 	animation: $animation $speed-of-linear-motion linear 1 normal forwards;
