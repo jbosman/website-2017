@@ -34,11 +34,11 @@ export default class Main extends Component {
 				//     2. Move orbs linearly back to center 
 				//     3. Sword Slashing animations 
 				if( this.classList.contains(linearClasses[i]) ){
-					let swordSlashes = document.querySelectorAll('.white-bar');
+					let swordSlashes = document.querySelectorAll('.sword-slash');
 					swordCrossAudio.play();
-					swordSlashes[0].classList.add('cross');
+					swordSlashes[0].classList.add('slash-animation');
 					setTimeout(function(){
-						swordSlashes[1].classList.add('cross');
+						swordSlashes[1].classList.add('slash-animation');
 					}, 600)
 				}
 				else{
@@ -51,11 +51,13 @@ export default class Main extends Component {
 	render(){
 		return (
 		<div id='main'>
-			<div className='white-bar-container diagonal-down'>
-				<div className='white-bar'></div>
+			<div >
 			</div>
-			<div className='white-bar-container diagonal-up'>
-				<div className='white-bar'></div>
+			<div className='sword-slash-container diagonal-down'>
+				<div className='sword-slash'></div>
+			</div>
+			<div className='sword-slash-container diagonal-up'>
+				<div className='sword-slash'></div>
 			</div>
 			<div id='orb-group-container'>
 				{ this.createOrbs() }
