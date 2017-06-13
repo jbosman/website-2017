@@ -1,22 +1,2 @@
-.sword-slash-container {
-		position: absolute;
-		height: 10vh;
-		width: 150vw;
-		background-color: transparent;
-		top: 45%;
-		// left: 10%;
-	}
-
-.sword-slash {
-	background-color: white;
-	height: 10vh;
-	width: 0vw;
-}
-
-.diagonal-down 	{ transform: translateX(-25vw) rotate(45deg); }
-
-.diagonal-up 	{ transform: translateX(-25vw) rotate(135deg); }
-
-.vertical 		{ transform: translateX(-25vw) rotate(90deg); }
-
-@import './sword-slash-animations';
+@import './sword-slashes-linear';
+@import './sword-slashes-circular';
