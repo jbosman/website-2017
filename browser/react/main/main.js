@@ -23,6 +23,17 @@ export default class Main extends Component {
 	componentDidMount(){
 
 		let orbs = Array.prototype.slice.call(document.querySelectorAll('.orb-container'));
+		let swordSlashes = Array.prototype.slice.call(document.querySelectorAll('.sword-slash'));
+		let spiralSlashes = Array.prototype.slice.call(document.querySelectorAll('.spiral-sword-slash'));
+		
+
+		swordSlashes[1].addEventListener('animationend', function(){
+			setTimeout(function(){
+				spiralSlashes[0].classList.add('rotate-border-top-left');
+				spiralSlashes[1].classList.add('rotate-border-top-right');
+				spiralSlashes[3].classList.add('rotate-border-bottom-right');
+			}, 500);
+		});
 
 		orbs.forEach( (orb, i) => {
 			orb.addEventListener( 'animationend', function(){
@@ -38,8 +49,6 @@ export default class Main extends Component {
 				//     2. Move orbs linearly back to center 
 				//     3. Sword Slashing animations 
 				if( this.classList.contains(linearClasses[i]) ){
-					let swordSlashes = document.querySelectorAll('.sword-slash');
-					// limitBreakAudio.play();
 					swordCrossAudio.play();
 					swordSlashes[0].classList.add('slash-animation');
 					setTimeout(function(){
@@ -52,7 +61,7 @@ export default class Main extends Component {
 			})
 		});
 
-		let squares = document.querySelectorAll('.spiral-sword-cut');
+		
 
 		let sq_container = document.querySelector('.spiral-sword-animation-container');
 		sq_container.addEventListener('click', function(){
@@ -67,12 +76,18 @@ export default class Main extends Component {
 		return (
 		<div id='main'>
 
+			<div className='spiral-sword-animation-container'>
+				<div className='spiral-sword-slash'></div>
+				<div className='spiral-sword-slash'></div>
+				<div className='spiral-sword-slash'></div>
+				<div className='spiral-sword-slash'></div>
+			</div>
 			
-			
-			<div className='sword-slash-container diagonal-down'>
+			<div className='sword-slash-container'>
 				<div className='sword-slash'></div>
 			</div>
-			<div className='sword-slash-container diagonal-up'>
+
+			<div className='sword-slash-container vertical'>
 				<div className='sword-slash'></div>
 			</div>
 			<div id='orb-group-container'>
@@ -82,14 +97,6 @@ export default class Main extends Component {
 		</div>
 		);
 	}
-
-	// <div className='spiral-sword-animation-container'>
-	// 			<div className='spiral-sword-cut'></div>
-	// 			<div className='spiral-sword-cut'></div>
-	// 			<div className='spiral-sword-cut'></div>
-	// 			<div className='spiral-sword-cut'></div>
-	// 		</div>
-	
 
 	createOrbs(){
 		let siteLocations = ['skills', 'projects', 'contact', 'history'];
