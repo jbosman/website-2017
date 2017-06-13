@@ -4,16 +4,19 @@ require('./main.scss');
 const blueOrb = require('./images/blueOrb_200x200.png');
 const rotateClasses = [ 'rotateTop', 'rotateRight', 'rotateBottom', 'rotateLeft'];
 const linearClasses = [ 'topToCenter', 'rightToCenter', 'bottomToCenter', 'leftToCenter'];
-const limitBreakAudio = document.createElement('audio');
 
+const limitBreakAudio = document.createElement('audio');
 const limitBreakSrc = 'sounds/limit.wav';
 limitBreakAudio.src = limitBreakSrc;
 limitBreakAudio.load();
+
+
 
 const swordCrossAudio = document.createElement('audio');
 const swordCrossSrc = 'sounds/cross.wav';
 swordCrossAudio.src = swordCrossSrc;
 swordCrossAudio.load();
+// swordCrossAudio.muted = true;
 
 export default class Main extends Component {
 
@@ -23,7 +26,8 @@ export default class Main extends Component {
 
 		orbs.forEach( (orb, i) => {
 			orb.addEventListener( 'animationend', function(){
-				this.classList.remove(rotateClasses[i]);	
+				this.classList.remove(rotateClasses[i]);
+
 				
 				// Triggering two different animations via animation end
 				//  If this is the first animation end event it is due to the
@@ -35,6 +39,7 @@ export default class Main extends Component {
 				//     3. Sword Slashing animations 
 				if( this.classList.contains(linearClasses[i]) ){
 					let swordSlashes = document.querySelectorAll('.sword-slash');
+					// limitBreakAudio.play();
 					swordCrossAudio.play();
 					swordSlashes[0].classList.add('slash-animation');
 					setTimeout(function(){
@@ -62,12 +67,7 @@ export default class Main extends Component {
 		return (
 		<div id='main'>
 
-			<div className='spiral-sword-animation-container'>
-				<div className='spiral-sword-cut'></div>
-				<div className='spiral-sword-cut'></div>
-				<div className='spiral-sword-cut'></div>
-				<div className='spiral-sword-cut'></div>
-			</div>
+			
 			
 			<div className='sword-slash-container diagonal-down'>
 				<div className='sword-slash'></div>
@@ -83,7 +83,12 @@ export default class Main extends Component {
 		);
 	}
 
-	
+	// <div className='spiral-sword-animation-container'>
+	// 			<div className='spiral-sword-cut'></div>
+	// 			<div className='spiral-sword-cut'></div>
+	// 			<div className='spiral-sword-cut'></div>
+	// 			<div className='spiral-sword-cut'></div>
+	// 		</div>
 	
 
 	createOrbs(){
@@ -112,6 +117,14 @@ export default class Main extends Component {
 		orbs[orbNumber].setAttribute("style", "z-index: 5");
 
 		orbs.forEach( (orb, i) => { orb.classList.toggle(rotateClasses[i]); })
+		
+		// This is required in order to work on mobile devices.
+		// Mobile devices require the user to start audio
+		// Here we start the audio, quickly pause it, and then play it later when we would like to.
+		// Tested on Android. Still need to try on iPhone.
+		swordCrossAudio.play();
+		swordCrossAudio.pause();
+		
 		limitBreakAudio.play();
 	}
 
