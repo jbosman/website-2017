@@ -10,6 +10,87 @@ body {
 	width: 100vw;
 	background-color: purple;
 
+	.spiral-sword-animation-container {
+		width: 100vw;
+		height: 100vw;
+		background-color: transparent;
+	}
+
+	.spiral-sword-animation-container:after {
+      content: " ";
+      display: table;
+      clear: both;
+    }
+
+	.spiral-sword-animation-container {
+		.spiral-sword-cut	 {
+	      float: left;
+	      width: 50vw;
+	      height: 50vh;
+	      transition: all 0.5s linear;
+	    }
+
+	    .spiral-sword-cut:nth-child(1){
+	    	border-top: 	50vh solid transparent;
+	    	border-right: 	50vw solid transparent;
+		}
+
+		.spiral-sword-cut:nth-child(2){
+			border-bottom: 	50vh solid transparent;
+	    	border-right: 	50vw solid transparent;
+		}
+	}
+
+	.spiral-sword-cut.rotate-border-top-left {
+		animation: rotate-border-top-left 1s linear 1 normal forwards;
+	}
+
+	.spiral-sword-cut.rotate-border-top-right {
+		animation: rotate-border-top-right 1s linear 1 normal forwards;
+	}
+
+	@keyframes rotate-border-top-left {
+      0% {
+        border-top: 	50vh solid transparent;
+        border-right: 	50vw solid transparent;
+        border-bottom: 	0 	 solid white;
+      }
+      
+      50% {
+      	border-top: 	0 solid transparent; 
+        border-right: 	50vw solid transparent;
+        border-bottom: 	50vh solid white;
+      }
+      
+      100% {
+        border-bottom:	50vh solid white;
+        border-right: 	0 	 solid transparent;
+        border-top: 	0 	 solid transparent; 
+        
+      }
+    }
+
+    @keyframes rotate-border-top-right {
+      0% {
+      	border-bottom: 	50vh solid transparent;
+	    border-right: 	50vw solid transparent;
+        border-left: 	0 	 solid white;
+      }
+       
+      50% {
+      	border-bottom: 	50vh solid transparent; 
+        border-left: 	50vw solid white;
+        border-right: 	0 	 solid transparent;
+      }
+      
+      100% {
+        border-bottom: 	0 	 solid transparent;
+        border-left: 	50vw solid white;
+        border-right: 	0 	 solid transparent; 
+        
+      }
+    }
+
 	@import './orbs';
 	@import './sword-slashes';
 }

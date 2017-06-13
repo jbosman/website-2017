@@ -46,13 +46,29 @@ export default class Main extends Component {
 				}
 			})
 		});
+
+		let squares = document.querySelectorAll('.spiral-sword-cut');
+
+		let sq_container = document.querySelector('.spiral-sword-animation-container');
+		sq_container.addEventListener('click', function(){
+			squares[0].classList.add('rotate-border-top-left');
+			squares[1].classList.add('rotate-border-top-right');
+			// squares[2].classList.add('rotateBorder');
+			// squares[3].classList.add('rotateBorder');
+		})
 	}
 
 	render(){
 		return (
 		<div id='main'>
-			<div >
+
+			<div className='spiral-sword-animation-container'>
+				<div className='spiral-sword-cut'></div>
+				<div className='spiral-sword-cut'></div>
+				<div className='spiral-sword-cut'></div>
+				<div className='spiral-sword-cut'></div>
 			</div>
+			
 			<div className='sword-slash-container diagonal-down'>
 				<div className='sword-slash'></div>
 			</div>
@@ -67,7 +83,8 @@ export default class Main extends Component {
 		);
 	}
 
-	// <div className='white-bar diagonal-up'></div>
+	
+	
 
 	createOrbs(){
 		let siteLocations = ['skills', 'projects', 'contact', 'history'];
