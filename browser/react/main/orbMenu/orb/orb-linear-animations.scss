@@ -15,13 +15,13 @@ $speed-of-linear-motion: 0.75s;
 }
 
 @keyframes topToCenter { @include keyframe_linear-y($orb0_Y-offset); }
-.orb-container.topToCenter { @include orb-animate-linear(topToCenter) }
+.orb.topToCenter { @include orb-animate-linear(topToCenter) }
 
 @keyframes rightToCenter { @include keyframe_linear-x($orb1_X-offset); }
-.orb-container.rightToCenter { @include orb-animate-linear(rightToCenter) }
+.orb.rightToCenter { @include orb-animate-linear(rightToCenter) }
 
 @keyframes bottomToCenter { @include keyframe_linear-y($orb2_Y-offset); }
-.orb-container.bottomToCenter { @include orb-animate-linear(bottomToCenter) }
+.orb.bottomToCenter { @include orb-animate-linear(bottomToCenter) }
 
 @keyframes leftToCenter { @include keyframe_linear-x($orb3_X-offset); }
-.orb-container.leftToCenter { @include orb-animate-linear(leftToCenter) }
+.orb.leftToCenter { @include orb-animate-linear(leftToCenter) }

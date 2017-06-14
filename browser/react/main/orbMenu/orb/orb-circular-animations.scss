@@ -20,13 +20,13 @@ $num-of-rotations: 2;
 
 // Orb animations
 @keyframes rotateTop { @include keyframe_rotate-y($orb0_Y-offset); }
-.orb-container.rotateTop { @include orb-animate-circular(rotateTop) }
+.orb.rotateTop { @include orb-animate-circular(rotateTop) }
 
 @keyframes rotateRight { @include keyframe_rotate-x($orb1_X-offset); }
-.orb-container.rotateRight { @include orb-animate-circular(rotateRight) }
+.orb.rotateRight { @include orb-animate-circular(rotateRight) }
 
 @keyframes rotateBottom { @include keyframe_rotate-y($orb2_Y-offset); }
-.orb-container.rotateBottom { @include orb-animate-circular(rotateBottom) }
+.orb.rotateBottom { @include orb-animate-circular(rotateBottom) }
 
 @keyframes rotateLeft { @include keyframe_rotate-x($orb3_X-offset); }
-.orb-container.rotateLeft { @include orb-animate-circular(rotateLeft) }
+.orb.rotateLeft { @include orb-animate-circular(rotateLeft) }

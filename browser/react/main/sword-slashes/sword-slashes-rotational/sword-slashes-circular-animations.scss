@@ -1,20 +1,20 @@
-.spiral-sword-slash.rotate-border-h-to-v {
+.rotational-sword-slash.rotate-border-h-to-v {
 	animation: rotate-border-h-to-v 0.25s linear 1 normal forwards;
 }
 
-.spiral-sword-slash.rotate-border-v-to-h {
+.rotational-sword-slash.rotate-border-v-to-h {
 	animation: rotate-border-v-to-h 0.25s linear 1 normal forwards;
 }
 
 @keyframes rotate-border-h-to-v {
     0% {
-      border-top: 	50vh solid transparent;
+      border-top:     50vh solid transparent;
       border-right: 	50vw solid transparent;
       border-bottom: 	0 	 solid white;
     }
     
     50% {
-    	border-top: 	0 solid transparent; 
+    	border-top: 	  0 solid transparent; 
       border-right: 	50vw solid transparent;
       border-bottom: 	50vh solid white;
     }
@@ -22,7 +22,7 @@
     100% {
       border-bottom:	50vh solid white;
       border-right: 	0 	 solid transparent;
-      border-top: 	0 	 solid transparent; 
+      border-top:     0 	 solid transparent; 
       
     }
   }
@@ -30,19 +30,19 @@
   @keyframes rotate-border-v-to-h {
     0% {
     	border-bottom: 	50vh solid transparent;
-    border-right: 	50vw solid transparent;
-      border-left: 	0 	 solid white;
+      border-right: 	50vw solid transparent;
+      border-left: 	  0 	 solid white;
     }
      
     50% {
     	border-bottom: 	50vh solid transparent; 
-      border-left: 	50vw solid white;
+      border-left: 	  50vw solid white;
       border-right: 	0 	 solid transparent;
     }
     
     100% {
       border-bottom: 	0 	 solid transparent;
-      border-left: 	50vw solid white;
+      border-left: 	  50vw solid white;
       border-right: 	0 	 solid transparent; 
       
     }

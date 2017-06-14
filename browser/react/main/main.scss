@@ -1,7 +1,7 @@
 body {
 	height: 100vh;
 	width: 100vw;
-	overflow: hidden;
+	// overflow: hidden;
 }
 
 #main {
@@ -10,6 +10,5 @@ body {
 	width: 100vw;
 	background-color: purple;
 
-	@import './orbs';
-	@import './sword-slashes';
+	// @import './orbs';
 }

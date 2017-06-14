@@ -1,41 +1,41 @@
-.spiral-sword-animation-container {
+.rotational-sword-animation-container {
 	position: absolute;
 	width: 100vw;
 	height: 100vw;
 	background-color: transparent;
 }
 
-.spiral-sword-animation-container:after {
+.rotational-sword-animation-container:after {
   content: " ";
   display: table;
   clear: both;
 }
 
-.spiral-sword-animation-container {
-	.spiral-sword-slash	 {
+.rotational-sword-animation-container {
+	.rotational-sword-slash	 {
       float: left;
       width: 50vw;
       height: 50vh;
       transition: all 0.5s linear;
     }
 
-    .spiral-sword-slash:nth-child(1){
+    .rotational-sword-slash:nth-child(1){
     	border-top: 	50vh solid transparent;
     	border-right: 	50vw solid transparent;
 	}
 
-	.spiral-sword-slash:nth-child(2){
+	.rotational-sword-slash:nth-child(2){
 		border-bottom: 	50vh solid transparent;
     	border-right: 	50vw solid transparent;
 	}
 
-	.spiral-sword-slash:nth-child(3){
+	.rotational-sword-slash:nth-child(3){
 		border-bottom: 	50vh solid transparent;
     	border-right: 	50vw solid transparent;
     	transform: 		rotateX(180deg) rotateY(180deg);
 	}
 
-	.spiral-sword-slash:nth-child(4){
+	.rotational-sword-slash:nth-child(4){
 		border-bottom: 	50vh solid transparent;
     	border-right: 	50vw solid transparent;
     	transform: 		rotateX(180deg) rotateY(180deg);
