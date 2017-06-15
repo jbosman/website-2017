@@ -10,9 +10,13 @@ function swordSlash(sword){
 	sword.classList.add('slash-animation');
 }
 
+function swordSlashVertical(sword){
+	sword.classList.add('slash-animation-vertical');
+}
+
 function staggeredSwordSlash(delay){
 	swordSlash(swordSlashes[0]);
-	setTimeout( function(){ swordSlash(swordSlashes[1]) } , delay);
+	setTimeout( function(){ swordSlashVertical(swordSlashes[1]) } , delay);
 }
 
 function registerSwordSlashEndEvent(cb){

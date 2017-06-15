@@ -1,11 +1,19 @@
 .sword-slash-container {
 		position: absolute;
-		height: 10vh;
-		width: 150vw;
 		background-color: transparent;
-		top: 45%;
-		// left: 10%;
-	}
+}
+
+.horizontal {
+	height: 10vh;
+	width: 100vw;
+	top: 45vh;
+}
+
+.vertical { 
+	height: 100vh;
+	width: 5vw;
+	left: 47.5vw;
+}
 
 .sword-slash {
 	background-color: white;
@@ -13,6 +21,11 @@
 	width: 0vw;
 }
 
-.vertical { transform: translateX(-25vw) rotate(90deg); }
+.vertical {
+	.sword-slash {
+		height: 0vh;
+		width: 5vw;
+	}
+}
 
 @import './sword-slash-linear-animation';

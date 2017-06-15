@@ -1,7 +1,7 @@
 .rotational-sword-animation-container {
 	position: absolute;
 	width: 100vw;
-	height: 100vw;
+	height: 100vh;
 	background-color: transparent;
 }
 
@@ -26,19 +26,19 @@
 
 	.rotational-sword-slash:nth-child(2){
 		border-bottom: 	50vh solid transparent;
-    	border-right: 	50vw solid transparent;
+    border-right: 	50vw solid transparent;
 	}
 
 	.rotational-sword-slash:nth-child(3){
 		border-bottom: 	50vh solid transparent;
-    	border-right: 	50vw solid transparent;
-    	transform: 		rotateX(180deg) rotateY(180deg);
+    border-right: 	50vw solid transparent;
+    transform: 		rotateX(180deg) rotateY(180deg);
 	}
 
 	.rotational-sword-slash:nth-child(4){
 		border-bottom: 	50vh solid transparent;
-    	border-right: 	50vw solid transparent;
-    	transform: 		rotateX(180deg) rotateY(180deg);
+    border-right: 	50vw solid transparent;
+    transform: 		rotateX(180deg) rotateY(180deg);
 	}
 }
 

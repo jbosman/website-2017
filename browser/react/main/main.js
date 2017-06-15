@@ -18,8 +18,8 @@ export default function Main(){
 
 		<SwordSlashRotational />
 		
-		<SwordSlashLinear />
-		<SwordSlashLinear vertical={true} />
+		<SwordSlashLinear className='horizontal'/>
+		<SwordSlashLinear className='vertical' />
 
 		<OrbMenu>
 			{ createOrbs() }

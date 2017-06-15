@@ -1,7 +1,8 @@
 
 import { 
 	limitBreakAudioPlay, 
-	swordSlashAudioPlay 
+	swordSlashAudioPlay,
+	makeAllAudioAvailableOnMobile 
 } from '../audio/controller';
 
 import { 
@@ -62,6 +63,7 @@ function kickOffAnimationWithAudio(){
 }
 
 function handleOrbClick(){
+	makeAllAudioAvailableOnMobile();
 	animationSequencer();
 	kickOffAnimationWithAudio();
 }

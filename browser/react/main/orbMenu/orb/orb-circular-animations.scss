@@ -1,3 +1,5 @@
+@import '../../../_common/transform-prefixes';
+
 $speed-of-1-rotation: 0.75s;
 $num-of-rotations: 2;
 
@@ -8,14 +10,14 @@ $num-of-rotations: 2;
 
 // Controls the path for left and right orbs
 @mixin keyframe_rotate-x($x){
-	0% 		{ transform: rotate(0deg) translateX($x) rotate(0deg) }
-	100%	{ transform: rotate(360deg) translateX($x) rotate(-360deg) }
+	0% 		{ @include transform( rotate(0deg) translateX($x) rotate(0deg) ) }
+	100% 	{ @include transform( rotate(360deg) translateX($x) rotate(-360deg) ) }
 }
 
 // Controls the path for the top and bottom orbs
 @mixin keyframe_rotate-y($y){
-	0% 		{ transform: rotate(0deg) translateY($y) rotate(0deg) }
-	100%	{ transform: rotate(360deg) translateY($y) rotate(-360deg) }
+	0% 		{ @include transform( rotate(0deg) translateY($y) rotate(0deg) ) }
+	100%	{ @include transform( rotate(360deg) translateY($y) rotate(-360deg) ) }
 }
 
 // Orb animations
