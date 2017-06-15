@@ -1,0 +1,8 @@
+$img-width: 400px;
+
+#JoeImg {
+	position: absolute;
+	width: 400px;
+	left: calc(50vw - #{$img-width} * 0.5);
+	top: 35vh;
+}

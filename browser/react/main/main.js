@@ -5,6 +5,8 @@ import OrbMenu from './orbMenu/orbMenu';
 import Orb from './orbMenu/orb/orb';
 import SwordSlashLinear from './sword-slashes/sword-slash-linear/sword-slash-linear';
 import SwordSlashRotational from './sword-slashes/sword-slashes-rotational/sword-slashes-rotational';
+import Joe from './joe/joe';
+
 
 function createOrbs(){
 	let orbTexts = ['skills', 'projects', 'contact', 'history'];
@@ -15,6 +17,8 @@ function createOrbs(){
 export default function Main(){
 	return (
 	<div id='main'>
+
+		<Joe></Joe>
 
 		<SwordSlashRotational />
 		
