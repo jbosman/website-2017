@@ -31,5 +31,5 @@ $num-of-rotations: 2;
 .orb.rotateBottom { @include orb-animate-circular(rotateBottom) }
 @include keyframes(rotateBottom) { @include keyframe_rotate-y($orb2_Y-offset); }
 
-.orb.rotateBottom { @include orb-animate-circular(rotateBottom) }
+.orb.rotateLeft { @include orb-animate-circular(rotateLeft) }
 @include keyframes(rotateLeft) { @include keyframe_rotate-x($orb3_X-offset); }
