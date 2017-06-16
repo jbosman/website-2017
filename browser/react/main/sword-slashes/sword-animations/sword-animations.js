@@ -41,7 +41,7 @@ function rotationalSwordSlash(){
 }
 
 function registerRotationalSwordSlashEndEvent(cb){
-	rotationalSwordSlashes[3].addEventListener('animationend', cb );
+	rotationalSwordSlashes[0].addEventListener('animationend', cb );
 }
 
 module.exports = {

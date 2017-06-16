@@ -1,4 +1,5 @@
 @import '../../../_common/transform-prefixes';
+@import '../../../_common/keyframe-prefixes';
 
 $speed-of-1-rotation: 0.75s;
 $num-of-rotations: 2;
@@ -20,15 +21,15 @@ $num-of-rotations: 2;
 	100%	{ @include transform( rotate(360deg) translateY($y) rotate(-360deg) ) }
 }
 
-// Orb animations
-@keyframes rotateTop { @include keyframe_rotate-y($orb0_Y-offset); }
+// Orb animations and keyframes
 .orb.rotateTop { @include orb-animate-circular(rotateTop) }
+@include keyframes(rotateTop){ @include keyframe_rotate-y($orb0_Y-offset); }
 
-@keyframes rotateRight { @include keyframe_rotate-x($orb1_X-offset); }
 .orb.rotateRight { @include orb-animate-circular(rotateRight) }
+@include keyframes(rotateRight){ @include keyframe_rotate-x($orb1_X-offset); }
 
-@keyframes rotateBottom { @include keyframe_rotate-y($orb2_Y-offset); }
 .orb.rotateBottom { @include orb-animate-circular(rotateBottom) }
+@include keyframes(rotateBottom) { @include keyframe_rotate-y($orb2_Y-offset); }
 
-@keyframes rotateLeft { @include keyframe_rotate-x($orb3_X-offset); }
-.orb.rotateLeft { @include orb-animate-circular(rotateLeft) }
+.orb.rotateBottom { @include orb-animate-circular(rotateBottom) }
+@include keyframes(rotateLeft) { @include keyframe_rotate-x($orb3_X-offset); }
