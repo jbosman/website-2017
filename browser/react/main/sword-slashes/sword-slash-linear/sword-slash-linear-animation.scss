@@ -1,14 +1,23 @@
-	@keyframes slash-animation { 
-		0% 		{ width: 0vw; }
-		100% 	{ width: 100vw; }
-	}
+@import '../../../_common/animation-prefixes';
+@import '../../../_common/keyframe-prefixes';
 
-	@keyframes slash-animation-vertical {
-		0% 		{ height: 0vh; }
-		100% 	{ height: 100vh; }
-	}
+.sword-slash.slash-animation { 
+	@include animation( slash-animation 0.25s linear 1 normal forwards); 
+}
+.sword-slash.slash-animation-vertical { 
+	@include animation( slash-animation-vertical 0.15s linear 1 normal forwards )
+}
 
-	.sword-slash.slash-animation { animation: slash-animation 0.25s linear 1 normal forwards; }
-	.sword-slash.slash-animation-vertical { animation: slash-animation-vertical 0.15s linear 1 normal forwards; }
+@include keyframes(slash-animation) { 
+	0% 		{ width: 0vw; }
+	100% 	{ width: 100vw; }
+}
+
+@include keyframes(slash-animation-vertical) {
+	0% 		{ height: 0vh; }
+	100% 	{ height: 100vh; }
+}
+
+
 
 	

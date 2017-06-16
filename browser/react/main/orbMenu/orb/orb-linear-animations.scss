@@ -1,10 +1,11 @@
+@import '../../../_common/animation-prefixes';
 @import '../../../_common/transform-prefixes';
 @import '../../../_common/keyframe-prefixes';
 
 $speed-of-linear-motion: 0.75s;
 
 @mixin orb-animate-linear($animation){
-	animation: $animation $speed-of-linear-motion linear 1 normal forwards;
+	@include animation( $animation $speed-of-linear-motion linear 1 normal forwards );
 }
 
 @mixin keyframe_linear-y($offset){

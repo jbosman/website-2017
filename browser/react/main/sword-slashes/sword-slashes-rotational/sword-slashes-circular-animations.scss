@@ -1,13 +1,12 @@
+@import '../../../_common/animation-prefixes';
 @import '../../../_common/keyframe-prefixes';
 
 .rotational-sword-slash.rotate-border-h-to-v {
-	animation: rotate-border-h-to-v 0.25s linear 1 normal forwards;
-  -webkit-animation: rotate-border-h-to-v 0.25s linear 1 normal forwards;
+	@include animation( rotate-border-h-to-v 0.25s linear 1 normal forwards );
 }
 
 .rotational-sword-slash.rotate-border-v-to-h {
-	animation: rotate-border-v-to-h 0.25s linear 1 normal forwards;
-  -webkit-animation: rotate-border-v-to-h 0.25s linear 1 normal forwards;
+	@include animation( rotate-border-v-to-h 0.25s linear 1 normal forwards );
 }
 
 @include keyframes(rotate-border-h-to-v){

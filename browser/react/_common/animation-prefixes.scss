@@ -1,0 +1,4 @@
+@mixin animation($values){
+	-webkit-animation: 	$values;
+	animation: 			$values;
+}

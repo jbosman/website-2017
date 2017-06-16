@@ -1,4 +1,5 @@
 @import 'orb-dimensions';
+@import '../../../_common/transform-prefixes';
 
 // This centers them in the container
 .orb {
@@ -21,7 +22,7 @@
 		color: white;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -75%);
+		@include transform (translate(-50%, -75%) );
 		text-transform: capitalize;
 	}
 
@@ -35,10 +36,10 @@ $orb1_X-offset: $std_offset;
 $orb2_Y-offset: $std_offset;
 $orb3_X-offset: -1 * $std_offset;
 
-.orb-0 { transform: translateY($orb0_Y-offset); }
-.orb-1 { transform: translateX($orb1_X-offset); }
-.orb-2 { transform: translateY($orb2_Y-offset); }
-.orb-3 { transform: translateX($orb3_X-offset); }
+.orb-0 { @include transform( translateY($orb0_Y-offset) ) }
+.orb-1 { @include transform( translateX($orb1_X-offset) ) }
+.orb-2 { @include transform( translateY($orb2_Y-offset) ) }
+.orb-3 { @include transform( translateX($orb3_X-offset) ) }
 
 @import 'orb-circular-animations';
 @import 'orb-linear-animations';
