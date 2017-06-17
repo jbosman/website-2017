@@ -17,18 +17,10 @@ function createOrbs(){
 export default function Main(){
 	return (
 	<div id='main'>
-
-		<Joe></Joe>
-
-		<SwordSlashRotational />
 		
-		<SwordSlashLinear className='horizontal'/>
-		<SwordSlashLinear className='vertical' />
-
 		<OrbMenu>
 			{ createOrbs() }
 		</OrbMenu>
-		
 	</div>
 	);
 }

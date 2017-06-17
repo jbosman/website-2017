@@ -1,8 +1,10 @@
-$img-width: 400px;
+@import '../orbMenu/orb/orb-dimensions.scss';
 
 #JoeImg {
+	@media (orientation: landscape) { --img-width: 70vh; }
+	@media (orientation: portrait) 	{ --img-width: 80vw; }
 	position: absolute;
-	width: 400px;
-	left: calc(50vw - #{$img-width} * 0.5);
-	top: 35vh;
+	width: var(--img-width);
+	top: 40%;
+	left: calc(50% - (var(--img-width) * 0.5) );
 }

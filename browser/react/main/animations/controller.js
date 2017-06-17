@@ -49,7 +49,7 @@ function setupSwordAnimations(){
 	getSwordsFromDOM();
 	registerOrbCenterEndEvent(linearSwordsWithAudio);
 	registerSwordSlashEndEvent(rotationalSwordSlash);
-	registerRotationalSwordSlashEndEvent(fadeOutOrbMenu);
+	registerRotationalSwordSlashEndEvent(fadeOutOrbMenu, 500);
 }
 
 function animationSequencer(){

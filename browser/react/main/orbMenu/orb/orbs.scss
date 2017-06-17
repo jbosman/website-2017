@@ -1,45 +1,50 @@
 @import 'orb-dimensions';
 @import '../../../_common/transform-prefixes';
 
-// This centers them in the container
 .orb {
+	@media (orientation: landscape) { --orb-radius: 15vh; }
+	@media (orientation: portrait) 	{ --orb-radius: 20vw; }
+
+	--orb-center-offset: 	calc(var(--orb-radius) * -0.5 ); 
+	--orb-cluster-radius: 	calc(var(--orb-radius) *  1.5 );
+
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: $orb_width;
-	height: $orb_width;
-	z-index: 100;
+	top: 	calc( 50% + var(--orb-center-offset) );
+	left: 	calc( 50% + var(--orb-center-offset) );
+	width: 	var(--orb-radius);
+	height: var(--orb-radius);
+	z-index: 10; // Places orbs at highest layer
   
 	img {
 		position: absolute;
-		width: 100%;
+		width: 	100%;
 		height: 100%;
 	}
 
 	.orb-text {
 		position: absolute;
-		font-size: 20px;
+		font-size: calc(var(--orb-radius) * 0.25);
 		color: white;
-		top: 50%;
-		left: 50%;
+		top: 	50%;
+		left: 	50%;
 		@include transform (translate(-50%, -75%) );
 		text-transform: capitalize;
 	}
-
 }
 
-.orb.front { z-index: 101 }
+.orb.front { z-index: 11 }	// Used to push the clicked orb to the highest layer
 
 // These offset them individually
-$orb0_Y-offset: -1 * $std_offset;
-$orb1_X-offset: $std_offset;
-$orb2_Y-offset: $std_offset;
-$orb3_X-offset: -1 * $std_offset;
+$orb0_Y: calc( -1 * var(--orb-cluster-radius) );
+$orb1_X: var(--orb-cluster-radius);
+$orb2_Y: var(--orb-cluster-radius);
+$orb3_X: calc( -1 * var(--orb-cluster-radius) );
 
-.orb-0 { @include transform( translateY($orb0_Y-offset) ) }
-.orb-1 { @include transform( translateX($orb1_X-offset) ) }
-.orb-2 { @include transform( translateY($orb2_Y-offset) ) }
-.orb-3 { @include transform( translateX($orb3_X-offset) ) }
+.orb-0 { @include transform( translateY( $orb0_Y ) ) }
+.orb-1 { @include transform( translateX( $orb1_X ) ) }
+.orb-2 { @include transform( translateY( $orb2_Y ) ) }
+.orb-3 { @include transform( translateX( $orb3_X ) ) }
+
 
 @import 'orb-circular-animations';
 @import 'orb-linear-animations';

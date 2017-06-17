@@ -8,24 +8,24 @@ $speed-of-linear-motion: 0.75s;
 	@include animation( $animation $speed-of-linear-motion linear 1 normal forwards );
 }
 
-@mixin keyframe_linear-y($offset){
-	0% 		{ 	@include transform( translateY($offset)) }
+@mixin keyframe_linear-x($x){
+	0% 		{ 	@include transform( translateX($x)) }
+  	100% 	{ 	@include transform( translateX(0px)) }
+}
+
+@mixin keyframe_linear-y($y){
+	0% 		{ 	@include transform( translateY($y)) }
   	100% 	{ 	@include transform( translateY(0px)) }
 }
 
-@mixin keyframe_linear-x($offset){
-	0% 		{ @include transform( translateX($offset) ) }
-  	100% 	{ @include transform( translateX(0px) ) }
-}
-
-@include keyframes(topToCenter){ @include keyframe_linear-y($orb0_Y-offset); }
+@include keyframes(topToCenter){ @include keyframe_linear-y($orb0_Y); }
 .orb.topToCenter { @include orb-animate-linear(topToCenter) }
 
-@include keyframes(rightToCenter) { @include keyframe_linear-x($orb1_X-offset); }
+@include keyframes(rightToCenter) { @include keyframe_linear-x($orb1_X); }
 .orb.rightToCenter { @include orb-animate-linear(rightToCenter) }
 
-@include keyframes(bottomToCenter) { @include keyframe_linear-y($orb2_Y-offset); }
+@include keyframes(bottomToCenter) { @include keyframe_linear-y($orb2_Y); }
 .orb.bottomToCenter { @include orb-animate-linear(bottomToCenter) }
 
-@include keyframes(leftToCenter) { @include keyframe_linear-x($orb3_X-offset); }
+@include keyframes(leftToCenter) { @include keyframe_linear-x($orb3_X); }
 .orb.leftToCenter { @include orb-animate-linear(leftToCenter) }

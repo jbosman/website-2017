@@ -12,25 +12,25 @@ $num-of-rotations: 2;
 
 // Controls the path for left and right orbs
 @mixin keyframe_rotate-x($x){
-	0% 		{ @include transform( rotate(0deg) translateX($x) rotate(0deg) ) }
-	100% 	{ @include transform( rotate(360deg) translateX($x) rotate(-360deg) ) }
+	0% 		{ @include transform( rotate(0deg) 	 translateX($x) rotate(0deg) ) }
+	100%	{ @include transform( rotate(360deg) translateX($x) rotate(-360deg) ) }
 }
 
-// Controls the path for the top and bottom orbs
+// // Controls the path for the top and bottom orbs
 @mixin keyframe_rotate-y($y){
-	0% 		{ @include transform( rotate(0deg) translateY($y) rotate(0deg) ) }
+	0% 		{ @include transform( rotate(0deg) 	 translateY($y) rotate(0deg) ) }
 	100%	{ @include transform( rotate(360deg) translateY($y) rotate(-360deg) ) }
 }
 
-// Orb animations and keyframes
+//Orb animations and keyframes
 .orb.rotateTop { @include orb-animate-circular(rotateTop) }
-@include keyframes(rotateTop){ @include keyframe_rotate-y($orb0_Y-offset); }
+@include keyframes(rotateTop){ @include keyframe_rotate-y( $orb0_Y ); }
 
 .orb.rotateRight { @include orb-animate-circular(rotateRight) }
-@include keyframes(rotateRight){ @include keyframe_rotate-x($orb1_X-offset); }
+@include keyframes(rotateRight){ @include keyframe_rotate-x( $orb1_X ); }
 
 .orb.rotateBottom { @include orb-animate-circular(rotateBottom) }
-@include keyframes(rotateBottom) { @include keyframe_rotate-y($orb2_Y-offset); }
+@include keyframes(rotateBottom) { @include keyframe_rotate-y($orb2_Y); }
 
 .orb.rotateLeft { @include orb-animate-circular(rotateLeft) }
-@include keyframes(rotateLeft) { @include keyframe_rotate-x($orb3_X-offset); }
+@include keyframes(rotateLeft) { @include keyframe_rotate-x( $orb3_X ); }

@@ -2,10 +2,10 @@
 
 // This container is used offset all orbs as a group
 #orb-menu {
+	position: relative;
 	height: 100vh;
 	width: 100vw;
-	position: absolute;
-	transform: translate( $orb_radius_offset, $orb_radius_offset);
+	background-color: #333;
 }
 
 @import 'orbMenu-fade-out-animation';

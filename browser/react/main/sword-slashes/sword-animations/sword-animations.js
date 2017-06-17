@@ -40,8 +40,10 @@ function rotationalSwordSlash(){
 	}, 500);
 }
 
-function registerRotationalSwordSlashEndEvent(cb){
-	rotationalSwordSlashes[0].addEventListener('animationend', cb );
+function registerRotationalSwordSlashEndEvent(cb, delay = 0){
+	rotationalSwordSlashes[0].addEventListener('animationend', function(){
+		setTimeout(cb(), delay);
+	});
 }
 
 module.exports = {

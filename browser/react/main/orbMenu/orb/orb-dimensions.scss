@@ -1,9 +1,6 @@
 // Orb dimensions
-$orb_radius: 90px;
+$orb_radius: 150px;
 // Orb screen offset
 $std_offset: 1.5 * $orb_radius;
 
-// Due to img of orb being square translate dimensions so we can treat them like a circle
-$orb-width: $orb-radius;
-$orb_height: $orb_radius;
-$orb_radius_offset: -1* 0.5 * $orb_width;
+$orb_radius_offset: -1* 0.5 * $orb_radius;
