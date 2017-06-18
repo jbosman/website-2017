@@ -1,15 +1,26 @@
 @import '../../../_common/transform-prefixes';
 
 .orb {
-	@media (orientation: landscape) { --orb-radius: 15vh; }
-	@media (orientation: portrait) 	{ --orb-radius: 20vw; }
-
-	--orb-center-offset: 	calc( var(--orb-radius) * -0.5 ); 
-	--orb-cluster-radius: 	calc( var(--orb-radius) *  1.5 );
+	@media (orientation: landscape) { 
+		--orb-radius: 15vh;
+		--orb-offset: -7.5vh;
+		// * Note * could not use css calc to generate values
+		// was NOT supported by safari on iPad
+		--orb-cluster-offset-positive: 22.5vh;
+		--orb-cluster-offset-negative: -22.5vh; 
+	}
+	@media (orientation: portrait) 	{ 
+		--orb-radius: 20vw; 
+		--orb-offset: -10vw;
+		// * Note * could not use css calc to generate values
+		// was NOT supported by safari on iPad
+		--orb-cluster-offset-positive: 30vw;
+		--orb-cluster-offset-negative: -30vw;
+	}
 
 	position: absolute;
-	top: 	calc( 50% + var(--orb-center-offset) );
-	left: 	calc( 50% + var(--orb-center-offset) );
+	top: 	calc( 50vh + var(--orb-offset));
+	left: 	calc( 50vw + var(--orb-offset));
 	width: 	var(--orb-radius);
 	height: var(--orb-radius);
 	z-index: 10; // Places orbs at highest layer
@@ -34,10 +45,10 @@
 .orb.front { z-index: 11 }	// Used to push the clicked orb to the highest layer
 
 // These offset them individually
-$orb0_Y: calc( -1 * var(--orb-cluster-radius) );
-$orb1_X: var(--orb-cluster-radius);
-$orb2_Y: var(--orb-cluster-radius);
-$orb3_X: calc( -1 * var(--orb-cluster-radius) );
+$orb0_Y: var(--orb-cluster-offset-negative);
+$orb1_X: var(--orb-cluster-offset-positive);
+$orb2_Y: var(--orb-cluster-offset-positive);
+$orb3_X: var(--orb-cluster-offset-negative);
 
 .orb-0 { @include transform( translateY( $orb0_Y ) ) }
 .orb-1 { @include transform( translateX( $orb1_X ) ) }
