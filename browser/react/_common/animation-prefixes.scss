@@ -2,3 +2,12 @@
 	-webkit-animation: 	$values;
 	animation: 			$values;
 }
+
+@mixin animationTest($name, $duration, $func, $itr, $dir, $fillMode ){
+	-webkit-animation-name: $name;
+	-webkit-animation-duration: $duration;
+	-webkit-animation-timing-function: $func;
+	-webkit-animation-iteration-count: $itr;
+	-webkit-animation-direction: $dir;
+	-webkit-animation-fill-mode: $fillMode;
+}

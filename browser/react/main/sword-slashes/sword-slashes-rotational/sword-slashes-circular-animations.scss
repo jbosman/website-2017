@@ -2,28 +2,28 @@
 @import '../../../_common/keyframe-prefixes';
 
 .rotational-sword-slash.rotate-border-h-to-v {
-	@include animation( rotate-border-h-to-v 0.25s linear 1 normal forwards );
+  @include animation( rotate-border-h-to-v 1s linear 1 normal forwards );
 }
 
 .rotational-sword-slash.rotate-border-v-to-h {
-	@include animation( rotate-border-v-to-h 0.25s linear 1 normal forwards );
+  @include animation( rotate-border-v-to-h 1s linear 1 normal forwards );
 }
 
 @include keyframes(rotate-border-h-to-v){
   0% {
     border-top:     50vh solid transparent;
     border-right:   50vw solid transparent;
-    border-bottom:  0    solid white;
+    border-bottom:  0    solid #FFF;
   }
   
   50% {
-    border-top:     0 solid transparent; 
+    border-top:     0    solid transparent; 
     border-right:   50vw solid transparent;
-    border-bottom:  50vh solid white;
+    border-bottom:  50vh solid #FFF;
   }
   
   100% {
-    border-bottom:  50vh solid white;
+    border-bottom:  50vh solid #FFF;
     border-right:   0    solid transparent;
     border-top:     0    solid transparent; 
     
@@ -34,18 +34,18 @@
   0% {
   	border-bottom: 	50vh solid transparent;
     border-right: 	50vw solid transparent;
-    border-left: 	  0 	 solid white;
+    border-left: 	  0 	 solid #FFF;
   }
    
   50% {
   	border-bottom: 	50vh solid transparent; 
-    border-left: 	  50vw solid white;
+    border-left: 	  50vw solid #FFF;
     border-right: 	0 	 solid transparent;
   }
   
   100% {
     border-bottom: 	0 	 solid transparent;
-    border-left: 	  50vw solid white;
+    border-left: 	  50vw solid #FFF;
     border-right: 	0 	 solid transparent; 
   }
 }
