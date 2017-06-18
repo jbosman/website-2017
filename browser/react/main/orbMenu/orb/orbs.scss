@@ -4,8 +4,8 @@
 	@media (orientation: landscape) { --orb-radius: 15vh; }
 	@media (orientation: portrait) 	{ --orb-radius: 20vw; }
 
-	--orb-center-offset: 	calc(var(--orb-radius) * -0.5 ); 
-	--orb-cluster-radius: 	calc(var(--orb-radius) *  1.5 );
+	--orb-center-offset: 	calc( var(--orb-radius) * -0.5 ); 
+	--orb-cluster-radius: 	calc( var(--orb-radius) *  1.5 );
 
 	position: absolute;
 	top: 	calc( 50% + var(--orb-center-offset) );
@@ -22,7 +22,7 @@
 
 	.orb-text {
 		position: absolute;
-		font-size: calc(var(--orb-radius) * 0.25);
+		font-size: calc( var(--orb-radius) * 0.25);
 		color: white;
 		top: 	50%;
 		left: 	50%;
