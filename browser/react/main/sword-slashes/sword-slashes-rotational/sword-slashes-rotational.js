@@ -1,6 +1,6 @@
 import React from 'react';
 
-require('./sword-slashes-circular.scss');
+require('./sword-slashes-rotational.scss');
 
 export default function SwordSlashRotational(){
 	return (
