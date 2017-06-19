@@ -1,11 +1,21 @@
 @import '../../../_common/animation-prefixes';
 @import '../../../_common/keyframe-prefixes';
 
+.sword-animation {
+	@include animation-timing-function(linear);
+  	@include animation-iteration-count(1);
+  	@include animation-fill-mode(forwards);
+}
+
 .sword-slash.slash-animation { 
-	@include animation( slash-animation 0.25s linear 1 normal forwards); 
+	@include animation-name(slash-animation);
+	@include animation-duration(0.25s);
+	@extend .sword-animation;
 }
 .sword-slash.slash-animation-vertical { 
-	@include animation( slash-animation-vertical 0.15s linear 1 normal forwards )
+	@include animation-name(slash-animation-vertical);
+	@include animation-duration(0.15s);
+	@extend .sword-animation;
 }
 
 @include keyframes(slash-animation) { 
